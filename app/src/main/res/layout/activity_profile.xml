@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:padding="@dimen/_20sdp"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".ui.Profile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/top_profile"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Name :"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:text="Jessica "
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:id="@+id/middle_profile"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="SID :"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:text="S123434 "
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/last_profile"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/middle_profile"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Email :"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:text="Jessica "
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>
