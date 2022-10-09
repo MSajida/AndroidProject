@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/AndroidProject.iml" filepath="$PROJECT_DIR$/.idea/AndroidProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/StudiBook.iml" filepath="$PROJECT_DIR$/.idea/modules/StudiBook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/StudiBook.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/StudiBook.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/StudiBook.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/StudiBook.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/StudiBook.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/StudiBook.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/StudiBook.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/StudiBook.app.unitTest.iml" />
     </modules>
   </component>
 </project>
