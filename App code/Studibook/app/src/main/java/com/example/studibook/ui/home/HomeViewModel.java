@@ -10,7 +10,7 @@ public class HomeViewModel extends ViewModel {
 
     public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("Here we provide details of  android projects on various domains. This acts as a reference for the students regarding the projects worked on different domain. This also includes a pie chart which provides the graphical representation of various domain related projects ");
     }
 
     public LiveData<String> getText() {
