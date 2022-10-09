@@ -9,3 +9,9 @@ Jessica Salome </br>
 Sajida Mohammad  </br>
 Sreeja Kumbhum </br>
 Thaarani Yerramsetty </br>
+
+<p>
+ 10/8/2022 Thaarani Yerramsetty S547062 </br>
+ 1.I have done the login page and commited the appropriate code.</br>
+ 2.Completed the help and support page also and</br>
+ 3.Submitted the Enter project details page also.</p>
