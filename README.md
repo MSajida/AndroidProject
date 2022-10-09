@@ -15,3 +15,9 @@ Thaarani Yerramsetty </br>
  1.I have done the login page and commited the appropriate code.</br>
  2.Completed the help and support page also and</br>
  3.Submitted the Enter project details page also.</p>
+
+<p>
+ 10/8/2022 Sajida S546648 </br>
+ 1.I have implemented the search bar and feched the projects when clicked on search bar</br>
+ 2. Have also added navigation bar which redirects to the respective pages </br>
+</p>
