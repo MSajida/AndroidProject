@@ -17,6 +17,12 @@
             android:name=".ui.FoodRelatedProject"
             android:exported="false" />
         <activity
+            android:name=".ui.EnterProjectDetails"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Login"
+            android:exported="false" />
+        <activity
             android:name=".DashBoard"
             android:exported="true"
             android:label="@string/title_activity_dash_board"
