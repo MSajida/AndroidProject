@@ -15,6 +15,11 @@ Thaarani Yerramsetty </br>
  1.I have done the login page and commited the appropriate code.</br>
  2.Completed the help and support page also and</br>
  3.Submitted the Enter project details page also.</p>
+ 
+ <p>
+ 10/8/2022 Sreeja Kumbhum S547055 </br>
+ 1. I have done pie chart </br>
+ 2. commited all the commits for piechart </br>
 
 <p>
  10/8/2022 Sajida S546648 </br>
