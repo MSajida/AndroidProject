@@ -22,6 +22,8 @@ public class FoodRelatedProject extends AppCompatActivity {
         project1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent(FoodRelatedProject.this,Details.class);
+                startActivity(intent);
             }
         });
 
