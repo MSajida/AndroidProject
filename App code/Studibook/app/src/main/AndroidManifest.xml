@@ -20,6 +20,12 @@
             android:name=".ui.EnterProjectDetails"
             android:exported="false" />
         <activity
+            android:name=".ui.Profile"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Details"
+            android:exported="false" />
+        <activity
             android:name=".ui.Login"
             android:exported="false" />
         <activity
