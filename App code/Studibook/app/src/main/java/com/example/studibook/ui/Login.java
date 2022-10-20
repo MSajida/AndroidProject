@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.studibook.R;
 
@@ -41,8 +42,6 @@ public class Login extends AppCompatActivity {
                 {
                     Toast.makeText(Login.this, "Please enter correct username/password", Toast.LENGTH_LONG).show();
                 }
-
-                finish();
 
                 //        Intent intent=new Intent(Login.this,EnterProjectDetails.class);
                 //      startActivity(intent);
