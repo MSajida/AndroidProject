@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginLeft="@dimen/_10sdp"
+    android:id="@+id/layout_click"
+    android:layout_marginRight="@dimen/_10sdp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="@dimen/_80sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:src="@drawable/download"
+        android:scaleType="fitXY"
+        android:id="@+id/detailImage"
+        android:layout_height="@dimen/_80sdp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="@dimen/_20sdp"
+        app:layout_constraintLeft_toRightOf="@id/detailImage"
+        android:textSize="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Title"
+        android:id="@+id/setTitle"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/setTitle"
+        android:layout_marginLeft="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/detailImage"
+        android:text="Batch : "
+        android:id="@+id/bacthtext"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/setTitle"
+        android:layout_marginLeft="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/bacthtext"
+        android:id="@+id/setBatch"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/setTitle"
+        android:layout_marginLeft="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/setBatch"
+        android:id="@+id/yeartext"
+        android:text="Year : "
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/setTitle"
+        android:layout_marginLeft="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/yeartext"
+        android:id="@+id/setYear"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
