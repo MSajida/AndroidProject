@@ -1,8 +1,6 @@
 package com.example.studibook;
 
-import java.io.Serializable;
-
-public class AddmemberModel implements Serializable {
+public class AddmemberModel {
     String name;
     String sid;
     String mail;

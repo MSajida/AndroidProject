@@ -22,11 +22,9 @@
             android:exported="false" />
         <activity
             android:name=".ui.Profile"
-            android:theme="@style/Theme.StudiBook.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".ui.Details"
-            android:theme="@style/Theme.StudiBook.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".ui.Login"

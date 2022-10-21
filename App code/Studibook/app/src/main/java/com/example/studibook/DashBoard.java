@@ -6,7 +6,6 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
-import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -22,7 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.studibook.databinding.ActivityDashBoardBinding;
 
-public class DashBoard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class DashBoard extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityDashBoardBinding binding;
@@ -38,29 +37,28 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_mainhome,
-                R.id.nav_home,  R.id.nav_slideshow,R.id.nav_helpsupport)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.nav_helpsupport)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_dash_board);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
     }
 
+/*
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.dash_board, menu);
+        return true;
+    }
+*/
 
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_dash_board);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.nav_gallery){
-            Toast.makeText(DashBoard.this, "Toast clicked", Toast.LENGTH_SHORT).show();
-        }
-        return false;
     }
 }

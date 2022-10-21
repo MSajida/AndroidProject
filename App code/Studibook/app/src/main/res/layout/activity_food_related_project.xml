@@ -4,20 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".ui.FoodRelatedProject">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:id="@+id/project_list_view"
-        android:layout_height="match_parent"/>
     <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/noData"
-        android:text="No Data"
-        android:gravity="center"
-        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="Food Related Projects"
         android:textSize="@dimen/_20sdp"
-        android:visibility="gone"
-        android:layout_height="match_parent"/>
+        android:textColor="@color/black"
+        android:id="@+id/texttext"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/texttext"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/Project1"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="project 1"
+            android:textSize="@dimen/_20sdp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/Project2"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="project 2"
+            android:textSize="@dimen/_20sdp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/Project3"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+
+            android:text="project 3"
+            android:textSize="@dimen/_20sdp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/Project4"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+
+            android:text="project 4"
+            android:textSize="@dimen/_20sdp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

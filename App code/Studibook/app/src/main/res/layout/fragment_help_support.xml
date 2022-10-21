@@ -21,7 +21,7 @@
             <ImageView
                 android:layout_width="@dimen/_45sdp"
                 android:scaleType="fitXY"
-android:src="@drawable/ic_baseline_person_24"
+                android:src="@mipmap/ic_launcher_round"
                 android:layout_height="@dimen/_45sdp"/>
             <TextView
                 android:layout_width="match_parent"
@@ -42,7 +42,7 @@ android:src="@drawable/ic_baseline_person_24"
             <ImageView
                 android:layout_width="@dimen/_45sdp"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_baseline_email_24"
+                android:src="@mipmap/ic_launcher_round"
                 android:layout_height="@dimen/_45sdp"/>
             <TextView
                 android:layout_width="match_parent"
@@ -63,7 +63,7 @@ android:src="@drawable/ic_baseline_person_24"
             <ImageView
                 android:layout_width="@dimen/_45sdp"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_baseline_local_phone_24"
+                android:src="@mipmap/ic_launcher_round"
                 android:layout_height="@dimen/_45sdp"/>
             <TextView
                 android:layout_width="match_parent"
@@ -90,7 +90,7 @@ android:src="@drawable/ic_baseline_person_24"
             <ImageView
                 android:layout_width="70dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_baseline_person_24"
+                android:src="@mipmap/ic_launcher_round"
                 android:layout_height="@dimen/_45sdp"/>
             <TextView
                 android:layout_width="match_parent"
@@ -111,7 +111,7 @@ android:src="@drawable/ic_baseline_person_24"
             <ImageView
                 android:layout_width="@dimen/_45sdp"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_baseline_email_24"
+                android:src="@mipmap/ic_launcher_round"
                 android:layout_height="@dimen/_45sdp"/>
             <TextView
                 android:layout_width="match_parent"
@@ -132,7 +132,7 @@ android:src="@drawable/ic_baseline_person_24"
             <ImageView
                 android:layout_width="@dimen/_45sdp"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_baseline_local_phone_24"
+                android:src="@mipmap/ic_launcher_round"
                 android:layout_height="@dimen/_45sdp"/>
             <TextView
                 android:layout_width="match_parent"

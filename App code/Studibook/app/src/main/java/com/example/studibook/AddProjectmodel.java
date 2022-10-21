@@ -1,9 +1,8 @@
 package com.example.studibook;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class AddProjectmodel implements Serializable {
+public class AddProjectmodel {
     String title;
     String description;
     String batch;
