@@ -26,3 +26,10 @@ Thaarani Yerramsetty </br>
  1.I have implemented the search bar and feched the projects when clicked on search bar</br>
  2. Have also added navigation bar which redirects to the respective pages </br>
 </p>
+
+ <p>
+ 10/8/2022 Jessica Merugu S547054 </br>
+ 1. I have done a UI on project details</br>
+ 2. Added details of project, its description and team member details</br>
+ 3. Commited all the changes into them</br>
+<p>
