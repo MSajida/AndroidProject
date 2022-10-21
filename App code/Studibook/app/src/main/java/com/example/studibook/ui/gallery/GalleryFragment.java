@@ -10,17 +10,21 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.studibook.AddProjectmodel;
 import com.example.studibook.AddmemberModel;
 import com.example.studibook.CommonUtils;
 import com.example.studibook.R;
+import com.example.studibook.databinding.FragmentGalleryBinding;
 import com.example.studibook.ui.AddMemberModel;
+import com.example.studibook.ui.EnterProjectDetails;
 import com.example.studibook.ui.Login;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -52,7 +56,7 @@ public class GalleryFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root=inflater.inflate(R.layout.activity_enter_project_details, container, false);
+       View root=inflater.inflate(R.layout.activity_enter_project_details, container, false);
         batchView = root.findViewById(R.id.id_selectbatch);
         yearView = root.findViewById(R.id.id_selectyear);
         categoryView = root.findViewById(R.id.id_selectcategory);
