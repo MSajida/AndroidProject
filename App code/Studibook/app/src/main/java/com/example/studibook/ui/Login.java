@@ -33,7 +33,6 @@ public class Login extends AppCompatActivity {
 
                 String username=_id_enter_username.getText().toString();
                 String password=_id_enter_paswword.getText().toString();
-                
                 if(username.equals("Instructor") && password.equals("nwmissouri"))
                 {
                     finish();
@@ -42,10 +41,19 @@ public class Login extends AppCompatActivity {
                 {
                     Toast.makeText(Login.this, "Please enter correct username/password", Toast.LENGTH_LONG).show();
                 }
+                finish();
+
+
+
 
                 //        Intent intent=new Intent(Login.this,EnterProjectDetails.class);
                 //      startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

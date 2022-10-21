@@ -23,7 +23,10 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
+            android:id="@+id/searchET"
             android:layout_width="0dp"
+            android:singleLine="true"
+            android:imeOptions="actionSearch"
             android:layout_height="wrap_content"
             android:hint="search for projects"
             app:layout_constraintLeft_toRightOf="@id/searchIcons"
