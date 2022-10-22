@@ -44,8 +44,6 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_dash_board);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-
     }
 
 

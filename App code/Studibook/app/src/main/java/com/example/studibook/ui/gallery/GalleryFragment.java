@@ -17,6 +17,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.example.studibook.AddProjectmodel;
 import com.example.studibook.AddmemberModel;
@@ -26,12 +28,16 @@ import com.example.studibook.databinding.FragmentGalleryBinding;
 import com.example.studibook.ui.AddMemberModel;
 import com.example.studibook.ui.EnterProjectDetails;
 import com.example.studibook.ui.Login;
+import com.example.studibook.ui.ProjectsListModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -56,7 +62,7 @@ public class GalleryFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-       View root=inflater.inflate(R.layout.activity_enter_project_details, container, false);
+        View root=inflater.inflate(R.layout.activity_enter_project_details, container, false);
         batchView = root.findViewById(R.id.id_selectbatch);
         yearView = root.findViewById(R.id.id_selectyear);
         categoryView = root.findViewById(R.id.id_selectcategory);
@@ -176,7 +182,7 @@ public class GalleryFragment extends Fragment {
 
                                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                                     String key=database.getReference().push().getKey();
-                                    DatabaseReference myRefstudent = database.getReference("Projects")
+                                    DatabaseReference myRefstudent = database.getReference("Projects").child(category)
                                             .child(key);
 
 
@@ -195,6 +201,13 @@ public class GalleryFragment extends Fragment {
                                         }
                                     });
 
+                                    saveCount(category);
+                                    NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_dash_board);
+                                    navController.navigate(R.id.nav_mainhome);
+
+                                    //   navController.findNavController(this).navigate(R.id.action_b_to_a);
+
+
                                 }else{
                                     Toast.makeText(getActivity(), "Add member details", Toast.LENGTH_SHORT).show();
                                 }
@@ -208,6 +221,90 @@ public class GalleryFragment extends Fragment {
                 }catch (Exception e){
                     e.getMessage();
                 }
+            }
+        });
+    }
+
+    private void saveCount(String category) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRefstudent = database.getReference("CountOfProjects");
+        myRefstudent.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                    ProjectsListModel projectsListModel=postSnapshot.getValue(ProjectsListModel.class);
+                    String medical=projectsListModel.getMedical();
+                    String travel=projectsListModel.getTravel();
+                    String food=projectsListModel.getFood();
+                    String miscellaneous=projectsListModel.getMiscellaneous();
+                    String environment=projectsListModel.getEnvironment();
+
+                    int medicalCount=0;
+                    int travelCount = 0;
+                    int foodCount=0;
+                    int miscellaneousCount=0;
+                    int environmentCount=0;
+                    if(category.equals("Medical")){
+                        medicalCount=Integer.parseInt(medical);
+                        travelCount=Integer.parseInt(travel);
+                        miscellaneousCount=Integer.parseInt(miscellaneous);
+                        foodCount=Integer.parseInt(food);
+                        environmentCount=Integer.parseInt(environment);
+
+                        medicalCount=medicalCount+1;
+                    }else if(category.equals("Travel")){
+                        medicalCount=Integer.parseInt(medical);
+                        travelCount=Integer.parseInt(travel);
+                        miscellaneousCount=Integer.parseInt(miscellaneous);
+                        foodCount=Integer.parseInt(food);
+                        environmentCount=Integer.parseInt(environment);
+
+
+                        travelCount=travelCount+1;
+                    }else if(category.equals("Food")){
+                        medicalCount=Integer.parseInt(medical);
+                        travelCount=Integer.parseInt(travel);
+                        miscellaneousCount=Integer.parseInt(miscellaneous);
+                        foodCount=Integer.parseInt(food);
+                        environmentCount=Integer.parseInt(environment);
+
+                        foodCount=foodCount+1;
+                    }else if(category.equals("Miscellaneous")){
+                        medicalCount=Integer.parseInt(medical);
+                        travelCount=Integer.parseInt(travel);
+                        miscellaneousCount=Integer.parseInt(miscellaneous);
+                        foodCount=Integer.parseInt(food);
+                        environmentCount=Integer.parseInt(environment);
+
+                        miscellaneousCount=miscellaneousCount+1;
+
+                    }else if(category.equals("Environment")){
+                        medicalCount=Integer.parseInt(medical);
+                        travelCount=Integer.parseInt(travel);
+                        miscellaneousCount=Integer.parseInt(miscellaneous);
+                        foodCount=Integer.parseInt(food);
+                        environmentCount=Integer.parseInt(environment);
+
+                        environmentCount=environmentCount+1;
+                    }
+                    ProjectsListModel studentPieModels=
+                            new ProjectsListModel(Integer.toString(foodCount),
+                                    Integer.toString(travelCount),
+                                    Integer.toString(environmentCount),
+                                    Integer.toString(medicalCount),
+                                    Integer.toString(miscellaneousCount)
+                            );
+                    myRefstudent.child("Projects").setValue(studentPieModels);
+
+                }
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }
