@@ -11,27 +11,26 @@ Sreeja Kumbhum </br>
 Thaarani Yerramsetty </br>
 
 <p>
- 10/8/2022 Thaarani Yerramsetty S547062 </br>
- 1.I have done the login page and commited the appropriate code.</br>
- 2.Completed the help and support page also and</br>
- 3.Submitted the Enter project details page also.</p>
+ Thaarani Yerramsetty S547062 </br>
+ 1. Login page.</br>
+ 2. Help and support page also and</br>
+ 3. Enter project details page also.</p>
  
  <p>
- 10/8/2022 Sreeja Kumbhum S547055 </br>
- 1. I have done pie chart </br>
- 2. commited all the commits for piechart </br>
+ Sreeja Kumbhum S547055 </br>
+ 1. Pie chart </br>
+ 2. About Page </br>
 
 <p>
- 10/8/2022 Sajida S546648 </br>
- 1.I have implemented the search bar and feched the projects when clicked on search bar</br>
- 2. Have also added navigation bar which redirects to the respective pages </br>
+ Sajida S546648 </br>
+ 1. Search bar and fetched the projects when clicked on search bar</br>
+ 2. Navigation bar which redirects to the respective pages </br>
 </p>
 
  <p>
- 10/8/2022 Jessica Merugu S547054 </br>
- 1. I have done a UI on project details</br>
+ Jessica Merugu S547054 </br>
+ 1. Project details</br>
  2. Added details of project, its description and team member details</br>
- 3. Commited all the changes into them</br>
 <p><br>
  
 ### Application information
