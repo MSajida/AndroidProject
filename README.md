@@ -32,4 +32,17 @@ Thaarani Yerramsetty </br>
  1. I have done a UI on project details</br>
  2. Added details of project, its description and team member details</br>
  3. Commited all the changes into them</br>
-<p>
+<p><br>
+### Application information
+The application purpose is to have all the android projects of the students who worked on the differernt domains. This helps students to refer previous android projects for reference, code and reference regarding projects can be founfd in  GITHUB repository. A menu bar is developed to switch between pages for simple navigation. For each ongoing semester, only instructors (Professor/GA) may add or amend the information regarding the students' projects. This application could be utilized for a project for the students future trimesters.
+#### Activities:
+##### Launcher Screen: 
+ The Home panel on this screen allows students to search for different projects by domain or project name. Details on a certain project are displayed when the user clicks on the project's links. I nformation about the project, the GitHub link, the team members (where applicable), and  Upon clicking on a certain team member, his profile and contact information would open. Students who participated in the project's communication channels (emails would be posted) as well as the semester in which the project is created.<br>
+##### About us screen:
+ This screen provides the basic information related to the application.<br>
+##### Add on Projects:
+ Only professors will have access to this tab to enter details about new projects for ongoing semesters. A popup is displayed where the instructor can enter student data to add team members. And the Plus icon might be used to add multiple team members.<br>
+##### Graphical Prospect: 
+ This screen displays the statistical information of various domain related projects.<br>
+##### Help & Support:
+ This screen will display details regarding the graduate assistant for the current semester. From the same screen, students can also contact the GA via phone or email.<br>
