@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.studibook">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,17 +18,23 @@
         android:theme="@style/Theme.StudiBook"
         tools:targetApi="31">
         <activity
-            android:name=".ui.FoodRelatedProject"
+            android:name=".ui.EditProjectActivtiy"
             android:exported="false" />
+        <activity
+            android:name=".ui.FoodRelatedProject"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".ui.EnterProjectDetails"
             android:exported="false" />
         <activity
             android:name=".ui.Profile"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.StudiBook.NoActionBar" />
         <activity
             android:name=".ui.Details"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.StudiBook.NoActionBar" />
         <activity
             android:name=".ui.Login"
             android:exported="false" />
