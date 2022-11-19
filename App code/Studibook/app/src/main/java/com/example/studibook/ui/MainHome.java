@@ -1,9 +1,12 @@
 package com.example.studibook.ui;
 
 import androidx.appcompat.widget.SearchView;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,8 +25,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.studibook.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class MainHome extends Fragment {
 
@@ -35,6 +46,7 @@ public class MainHome extends Fragment {
     ArrayList<String> environment_projects= null;
     ArrayList<String> medical_projects= null;
     ArrayList<String> miscelleanous_projects= null;
+    Map<String, ArrayList<String>> hash_map = new HashMap<String, ArrayList<String>>();
 
 
 
@@ -49,8 +61,103 @@ public class MainHome extends Fragment {
         View view= inflater.inflate(R.layout.fragment_main_home, container, false);
         searchView=view.findViewById(R.id.searchIcons);
         searchText= view.findViewById(R.id.searchET);
+
+       // saveKeywordsinfirebase();
+        if(isOnline(getActivity())){
+            getKeywods();
+        }else{
+            Toast.makeText(getActivity(), "No Internet", Toast.LENGTH_SHORT).show();
+        }
+
         return view;
     }
+
+    public static boolean isOnline(FragmentActivity activity) {
+        ConnectivityManager cm = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnectedOrConnecting();
+    }
+    private void getKeywods() {
+        hash_map.clear();
+        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference= firebaseDatabase.getReference("Keywords").child("Categories");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot snapshot1:snapshot.getChildren()){
+                    String value=snapshot1.getValue(String.class);
+                    String key=snapshot1.getKey();
+                    ArrayList<String> list=new ArrayList<>();
+                    String[] strArray= value.split(",");
+                    for (int i = 0; i< strArray.length; i++){
+                        list.add(strArray[i].toLowerCase());
+                    }
+                    hash_map.put(key, list);
+                }
+                System.out.println("Initial Mappings are: " + hash_map);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                error.getMessage();
+            }
+        });
+    }
+
+/*
+    private void saveKeywordsinfirebase() {
+        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference= firebaseDatabase.getReference("Keywords").child("Categories");
+        String foodkeywords="food,menu,hotel,eat,drink";
+        String travelkeywords="singapore,japan,mountains,valleys";
+        String sciencekeywords="science,technologies,eat,drink";
+        String medicalkeywords="Health,food,mountains,valleys";
+        databaseReference.child("FOOD").setValue(foodkeywords);
+        databaseReference.child("Travel").setValue(travelkeywords);
+        databaseReference.child("Science").setValue(sciencekeywords);
+        databaseReference.child("Medical").setValue(medicalkeywords);
+
+
+     */
+/*   food_projects= new ArrayList<>();
+        food_projects.add("food");
+        food_projects.add("menu");
+        food_projects.add("cuisines");
+        food_projects.add("drinks");
+        food_projects.add("eat");
+        food_projects.add("Food");
+        food_projects.add("rice");
+        food_projects.add("Veg");
+        food_projects.add("veg");
+        food_projects.add("non-veg");
+        food_projects.add("hotels");
+        food_projects.add("chinese food");
+        food_projects.add("Asian");
+        food_projects.add("Non-veg");
+        food_projects.add("diet");
+        food_projects.add("vegetables");
+        food_projects.add("fruits");
+        food_projects.add("Rice");
+        food_projects.add("restaurant");
+        food_projects.add("Restaurant");
+        databaseReference.child("FOOD").setValue(food_projects);
+
+        travel_projects= new ArrayList<>();
+        travel_projects.add("journey");
+        travel_projects.add("trip");
+        travel_projects.add("tour");
+        travel_projects.add("peregrinate");
+        travel_projects.add("trek");
+        travel_projects.add("voyage");
+        travel_projects.add("travel");
+        travel_projects.add("Travel");
+        travel_projects.add("journey");
+        medical_projects.add("Health");
+        databaseReference.child("TRAVEL").setValue(travel_projects);*//*
+
+
+    }
+*/
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -61,8 +168,8 @@ public class MainHome extends Fragment {
             public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                     // Your piece of code on keyboard search click
-                    checkData();
-
+                    //checkData();
+                    searchKeyWordFirebase();
                     return true;
                 }
                 return false;            }
@@ -71,10 +178,27 @@ public class MainHome extends Fragment {
         searchView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view_id) {
-
-                checkData();
-            }
+                searchKeyWordFirebase();
+           //     checkData();
+              }
         });
+    }
+
+    private void searchKeyWordFirebase() {
+        ArrayList<String> searchedarray=new ArrayList<>();
+        String text_search= searchText.getText().toString().trim().toLowerCase();
+       System.out.println ("Searched Value"+hash_map.containsValue(text_search));
+        for(Map.Entry<String, ArrayList<String>> entry : hash_map.entrySet())
+        {
+            if(entry.getValue().contains(text_search))
+                searchedarray.add(entry.getKey());
+                System.out.println("Found Cat in "+entry.getKey());
+        }
+
+        Intent intent=new Intent(getActivity(),FoodRelatedProject.class);
+        intent.putStringArrayListExtra("SEARCHEDARRAY", searchedarray);
+        startActivity(intent);
+
     }
 
     private void checkData() {
