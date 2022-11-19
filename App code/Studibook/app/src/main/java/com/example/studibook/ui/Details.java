@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.TextView;
 
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 
 public class Details extends AppCompatActivity {
 
-    TextView detailsTitle,enter_description,githubtext,details_year;
+    TextView detailsTitle,enter_description,githubtext,details_year,enter_gitubLink;
     RecyclerView detailsList_view;
     TeamMemberadapter teamMemberadapter;
     @Override
@@ -29,6 +30,7 @@ public class Details extends AppCompatActivity {
         enter_description=findViewById(R.id.enter_description);
         githubtext=findViewById(R.id.githubtext);
         detailsTitle=findViewById(R.id.detailsTitle);
+        enter_gitubLink=findViewById(R.id.enter_gitubLink);
         details_year=findViewById(R.id.details_year);
         detailsList_view.setLayoutManager(new LinearLayoutManager(this));
         AddProjectmodel addProjectmodel= (AddProjectmodel) getIntent().getSerializableExtra("PROJECTDETAILS");
@@ -36,7 +38,8 @@ public class Details extends AppCompatActivity {
         enter_description.setText(addProjectmodel.getDescription());
         githubtext.setText(addProjectmodel.getBatch());
         details_year.setText(addProjectmodel.getYear());
-
+        enter_gitubLink.setText(addProjectmodel.getGithubLink());
+        enter_gitubLink.setMovementMethod(LinkMovementMethod.getInstance());
         ArrayList<AddmemberModel> list=new ArrayList<>();
         for (AddmemberModel postSnapshot : addProjectmodel.getMemberList()) {
             list.add(postSnapshot);

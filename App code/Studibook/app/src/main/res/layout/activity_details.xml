@@ -38,6 +38,7 @@
         android:id="@+id/githubtext"
         android:layout_marginTop="@dimen/_5sdp"
         android:textSize="@dimen/_12sdp"
+        android:textColor="#757575"
         app:layout_constraintLeft_toRightOf="@id/text_batch"
         app:layout_constraintTop_toBottomOf="@id/detailsTitle"
         android:layout_height="wrap_content"/>
@@ -58,6 +59,7 @@
         android:layout_width="wrap_content"
         android:id="@+id/details_year"
         android:layout_marginTop="@dimen/_5sdp"
+        android:textColor="#757575"
         android:textSize="@dimen/_12sdp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailsTitle"
@@ -78,6 +80,7 @@
     <TextView
         android:layout_width="match_parent"
         android:id="@+id/enter_description"
+        android:textColor="#757575"
         android:textSize="@dimen/_14sdp"
         android:layout_marginTop="@dimen/_5sdp"
         app:layout_constraintTop_toBottomOf="@id/text_description"
@@ -86,7 +89,30 @@
 
     <TextView
         android:layout_width="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/enter_description"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:text="Github : "
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:id="@+id/text_github"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/enter_description"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/enter_gitubLink"
+        android:textSize="@dimen/_14sdp"
+        android:textColor="#065797"
+        android:autoLink="web"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintTop_toBottomOf="@id/text_github"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/enter_gitubLink"
         android:layout_marginTop="@dimen/_12sdp"
         android:text="Team Member: "
         android:textColor="@color/black"
