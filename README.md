@@ -57,3 +57,8 @@ This screen consists of a Menu which has 5 sub categories
 ##### Test Credentials for Login: 
 UserName: Instructor <br>
 Password: nwmissouri
+
+##### Supported Devices: 
+API level 22 to API level 31 <br>
+Google play store supported Emulators is required to run the application
+
