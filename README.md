@@ -48,5 +48,5 @@ The application purpose is to have all the android projects of the students who 
  This screen will display details regarding the graduate assistant for the current semester. From the same screen, students can also contact the GA via phone or email.<br>
  
 ##### Test Credentials for Login: 
-UserName: Instructor
-password: nwmissouri
+UserName: Instructor <br>
+Password: nwmissouri
