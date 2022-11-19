@@ -9,18 +9,11 @@ public class AddProjectmodel implements Serializable {
     String batch;
     String year;
     String category;
+    String githubLink;
+    String key;
     ArrayList<AddmemberModel> memberList;
 
     public AddProjectmodel() {
-    }
-
-    public AddProjectmodel(String title, String description, String batch, String year, String category, ArrayList<AddmemberModel> memberList) {
-        this.title = title;
-        this.description = description;
-        this.batch = batch;
-        this.year = year;
-        this.category = category;
-        this.memberList = memberList;
     }
 
     public String getTitle() {
@@ -63,11 +56,38 @@ public class AddProjectmodel implements Serializable {
         this.category = category;
     }
 
+    public String getGithubLink() {
+        return githubLink;
+    }
+
+    public void setGithubLink(String githubLink) {
+        this.githubLink = githubLink;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     public ArrayList<AddmemberModel> getMemberList() {
         return memberList;
     }
 
     public void setMemberList(ArrayList<AddmemberModel> memberList) {
+        this.memberList = memberList;
+    }
+
+    public AddProjectmodel(String title, String description, String batch, String year, String category, String githubLink, String key, ArrayList<AddmemberModel> memberList) {
+        this.title = title;
+        this.description = description;
+        this.batch = batch;
+        this.year = year;
+        this.category = category;
+        this.githubLink = githubLink;
+        this.key = key;
         this.memberList = memberList;
     }
 }

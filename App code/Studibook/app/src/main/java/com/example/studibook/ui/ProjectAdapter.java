@@ -16,6 +16,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.studibook.AddProjectmodel;
 import com.example.studibook.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -47,7 +52,8 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
         holder.setBatch.setText(listdata.get(position).getBatch());
         holder.setYear.setText(listdata.get(position).getYear());
         holder.setTitle.setText(listdata.get(position).getTitle());
-        holder.detailImage.setImageResource(picture);
+        int image=getmage(listdata.get(position).getCategory());
+        holder.detailImage.setImageResource(image);
         holder.layout_click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +63,71 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
             }
         });
 
+        holder.edit_project.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // edit project
+                Intent intent=new Intent(context, Login.class);
+                intent.putExtra("PROJECTDETAILS", addProjectmodel);
+                intent.putExtra("EDIT", "TRUE");
+                context.startActivity(intent);
+            }
+        });
+        holder.delete_project.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                  // delete project
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                String key = database.getReference().push().getKey();
+                DatabaseReference myRefstudent = database.getReference("Projects").child(addProjectmodel.getCategory());
+                myRefstudent.child(addProjectmodel.getKey()).removeValue();
+                removeCount(addProjectmodel.getCategory().toString().toLowerCase(),position);
+            }
+        });
+
+    }
+
+    private int getmage(String category) {
+        int image=0;;
+        String food="Food";
+        String travel="Travel";
+        String medical="Medical";
+        String environment="Environment";
+        String miscellaneous="Miscellaneous";
+
+        if (category.toLowerCase().equalsIgnoreCase(food.toLowerCase())){
+            image=R.drawable.food;
+        }else if(category.toLowerCase().equalsIgnoreCase(travel.toLowerCase())){
+            image=R.drawable.travel;
+        }else if(category.toLowerCase().equalsIgnoreCase(medical.toLowerCase())){
+            image=R.drawable.medical;
+        }else if(category.toLowerCase().equalsIgnoreCase(environment.toLowerCase())){
+            image=R.drawable.environment;
+        }else if(category.toLowerCase().equalsIgnoreCase(miscellaneous.toLowerCase())){
+            image=R.drawable.miscellaneous;
+        }
+        return image;
+    }
+
+    private void removeCount(String ssss, int position) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRefstudent = database.getReference("CountOfProjects").child("Projects").child(ssss);
+        myRefstudent.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String count=snapshot.getValue().toString();
+                int num=Integer.parseInt(count);
+                num=num-1;
+                myRefstudent.setValue(String.valueOf(num));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        listdata.remove(position);
     }
 
     @Override
@@ -67,11 +138,13 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView setBatch,setYear,setTitle;
         ConstraintLayout layout_click;
-        ImageView detailImage;
+        ImageView detailImage,edit_project,delete_project;
         public ViewHolder(View itemView) {
             super(itemView);
             this.setBatch = (TextView) itemView.findViewById(R.id.setBatch);
             this.detailImage = (ImageView) itemView.findViewById(R.id.detailImage);
+            this.delete_project = (ImageView) itemView.findViewById(R.id.delete_project);
+            this.edit_project = (ImageView) itemView.findViewById(R.id.edit_project);
             this.setYear = (TextView) itemView.findViewById(R.id.setYear);
             this.setTitle = (TextView) itemView.findViewById(R.id.setTitle);
             this.layout_click = (ConstraintLayout) itemView.findViewById(R.id.layout_click);
