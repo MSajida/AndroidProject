@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/_20sdp"
+    android:paddingRight="@dimen/_20sdp"
+    android:layout_height="match_parent"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/title_text_input"
+            android:layout_marginTop="@dimen/_10sdp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            app:boxStrokeColor="#757575"
+            android:textColorHint="#757575"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/id_enterTitle"
+                android:textColorHint="#757575"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Title" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/description_text_input"
+            android:layout_marginTop="@dimen/_10sdp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            app:boxStrokeColor="#757575"
+            android:textColorHint="#757575"
+            app:layout_constraintTop_toBottomOf="@id/title_text_input"
+            android:layout_height="wrap_content"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/id_description"
+                android:layout_width="match_parent"
+                android:textColorHint="#757575"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:hint="Enter Description" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Academic Year"
+            android:textColor="#757575"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:id="@+id/text_academicYear"
+            app:layout_constraintTop_toBottomOf="@id/description_text_input"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:id="@+id/layout_academic"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/text_academicYear"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/text_academicYear"
+                android:hint="Select Batch"
+                app:endIconTint="#757575"
+                android:textColorHint="#757575"
+                android:orientation="horizontal"
+                >
+
+                <AutoCompleteTextView
+                    android:textColor="@color/black"
+                    android:id="@+id/id_selectbatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/white"
+                    android:inputType="none"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_weight="1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@id/text_academicYear"
+                android:hint="Select year"
+                app:endIconTint="#757575"
+
+                android:textColorHint="#757575"
+                android:orientation="horizontal"
+                >
+
+                <AutoCompleteTextView
+                    android:textColor="@color/black"
+                    android:id="@+id/id_selectyear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/white"
+                    android:inputType="none"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:id="@+id/layout_category"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintTop_toBottomOf="@id/layout_academic"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Category"
+                android:textColor="#757575"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/text_category"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/layout_academic"
+                android:layout_height="match_parent"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_weight="1"
+                app:boxStrokeColor="#757575"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_marginRight="@dimen/_30sdp"
+                android:layout_height="wrap_content"
+                app:endIconTint="#757575"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@id/text_academicYear"
+                android:hint="Select Category"
+                android:textColorHint="#757575"
+                android:orientation="horizontal"
+                >
+
+                <AutoCompleteTextView
+                    android:textColor="@color/black"
+                    android:id="@+id/id_selectcategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColorHint="#757575"
+                    android:backgroundTint="@color/white"
+                    android:inputType="none"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/github_text_input"
+            android:layout_marginTop="@dimen/_10sdp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            app:boxStrokeColor="#757575"
+            android:textColorHint="#757575"
+            app:layout_constraintTop_toBottomOf="@id/layout_category"
+            android:layout_height="wrap_content"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/id_entergithub"
+                android:textColorHint="#757575"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Github Link" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Add Team Member"
+            android:visibility="gone"
+            android:id="@+id/text_addmember"
+            android:textColor="#757575"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@id/github_text_input"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name_text_input"
+            android:layout_marginTop="@dimen/_10sdp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            app:boxStrokeColor="#757575"
+            android:textColorHint="#757575"
+            android:visibility="gone"
+
+            app:layout_constraintTop_toBottomOf="@id/text_addmember"
+            android:layout_height="wrap_content"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/id_entername"
+                android:layout_width="match_parent"
+                android:textColorHint="#757575"
+                android:textColor="@color/black"
+
+                android:layout_height="wrap_content"
+                android:hint="Enter Name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sid_text_input"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:visibility="gone"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:textColorHint="#757575"
+            app:boxStrokeColor="#757575"
+            app:layout_constraintTop_toBottomOf="@id/name_text_input"
+            android:layout_height="wrap_content"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/id_enterSid"
+                android:textColorHint="#757575"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter SID" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_text_input"
+            android:layout_marginTop="@dimen/_6sdp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            app:boxStrokeColor="#757575"
+            android:visibility="gone"
+
+            android:textColorHint="#757575"
+            app:layout_constraintTop_toBottomOf="@id/sid_text_input"
+            android:layout_height="wrap_content"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/id_enterEmail"
+                android:textColorHint="#757575"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Mail" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:text="Continue"
+            android:padding="@dimen/_10sdp"
+            android:id="@+id/id_continue"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@+id/email_text_input"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:text="back"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:id="@+id/id_back"
+            android:padding="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@+id/email_text_input"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="wrap_content"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
