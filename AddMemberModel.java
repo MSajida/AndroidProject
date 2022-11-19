@@ -1,18 +1,19 @@
-package com.example.studibook.ui;
+package com.example.studibook;
 
-public class AddMemberModel {
+import java.io.Serializable;
+
+public class AddmemberModel implements Serializable {
     String name;
-    String email;
     String sid;
+    String mail;
 
-
-    public AddMemberModel() {
+    public AddmemberModel() {
     }
 
-    public AddMemberModel(String name, String email, String sid) {
+    public AddmemberModel(String name, String sid, String mail) {
         this.name = name;
-        this.email = email;
         this.sid = sid;
+        this.mail = mail;
     }
 
     public String getName() {
@@ -23,19 +24,19 @@ public class AddMemberModel {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getSid() {
         return sid;
     }
 
     public void setSid(String sid) {
         this.sid = sid;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 }

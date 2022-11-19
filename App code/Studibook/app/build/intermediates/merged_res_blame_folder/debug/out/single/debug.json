@@ -1,0 +1,174 @@
+[
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\layout_nav_header_dash_board.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\layout\\nav_header_dash_board.xml"
+    },
+    {
+        "merged": "com.example.studibook.app-merged_res-45:/layout_activity_login.xml.flat",
+        "source": "com.example.studibook.app-main-47:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.studibook.app-merged_res-45:/layout_fragment_help_support.xml.flat",
+        "source": "com.example.studibook.app-main-47:/layout/fragment_help_support.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\menu_activity_main_drawer.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\menu\\activity_main_drawer.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-pngs-40:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\layout_activity_dash_board.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\layout\\activity_dash_board.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\navigation_mobile_navigation.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\navigation\\mobile_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\layout_fragment_help_support.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\layout\\fragment_help_support.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\layout_fragment_slideshow.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\layout\\fragment_slideshow.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\drawable_ic_menu_camera.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\drawable\\ic_menu_camera.xml"
+    },
+    {
+        "merged": "com.example.studibook.app-merged_res-45:/layout_activity_enter_project_details.xml.flat",
+        "source": "com.example.studibook.app-main-47:/layout/activity_enter_project_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\layout_content_dash_board.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\layout\\content_dash_board.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\drawable_color_cursor.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\drawable\\color_cursor.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\drawable_ic_baseline_search_24.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\drawable\\ic_baseline_search_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\drawable_ic_menu_gallery.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\drawable\\ic_menu_gallery.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\layout_fragment_gallery.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\layout\\fragment_gallery.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\drawable_ic_baseline_person_24.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\drawable\\ic_baseline_person_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\drawable_ic_baseline_add_24.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\drawable\\ic_baseline_add_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\drawable_lock_password.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\drawable\\lock_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\drawable_rectangle.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\drawable\\rectangle.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\drawable_ic_menu_slideshow.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\drawable\\ic_menu_slideshow.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\layout_activity_food_related_project.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\layout\\activity_food_related_project.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\layout_app_bar_dash_board.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\layout\\app_bar_dash_board.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\menu_dash_board.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\menu\\dash_board.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\drawable_side_nav_bar.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\drawable\\side_nav_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-merged_res-45:\\layout_fragment_main_home.xml.flat",
+        "source": "C:\\Users\\S547062\\.gradle\\daemon\\7.3.3\\com.example.studibook.app-main-47:\\layout\\fragment_main_home.xml"
+    }
+]
