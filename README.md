@@ -59,6 +59,6 @@ UserName: Instructor <br>
 Password: nwmissouri
 
 ##### Supported Devices: 
-API level 22 to API level 31 <br>
-Google play store supported Emulators is required to run the application
+ - API level 22 to API level 31 <br>
+ - Google play store supported Emulators is required to run the application
 
