@@ -23,7 +23,7 @@ public class EnterProjectDetails extends AppCompatActivity {
     String[] categoryList = new String[]{"Food", "Travel", "Environment", "Medical", "Miscellaneous"};
 
     AutoCompleteTextView batchView, yearView, categoryView;
-    TextInputEditText id_enterTitle, id_description, id_entername, id_enterSid, id_enterEmail;
+    TextInputEditText id_enterTitle, id_description, id_entername, id_enterSid, id_enterEmail, id_entergithub;
     Button id_continue, id_addmember, id_back;
     ArrayList<AddMemberModel> addMemberModelArrayList;
 
@@ -33,6 +33,7 @@ public class EnterProjectDetails extends AppCompatActivity {
         setContentView(R.layout.activity_enter_project_details);
         batchView = findViewById(R.id.id_selectbatch);
         yearView = findViewById(R.id.id_selectyear);
+        id_entergithub = findViewById(R.id.id_entergithub);
         categoryView = findViewById(R.id.id_selectcategory);
         id_back = findViewById(R.id.id_back);
         id_addmember = findViewById(R.id.id_addmember);
@@ -44,7 +45,6 @@ public class EnterProjectDetails extends AppCompatActivity {
         id_enterTitle = findViewById(R.id.id_enterTitle);
 
 
-
         setSpinnerAdapterValues();
 
         id_addmember.setOnClickListener(new View.OnClickListener() {
@@ -52,26 +52,23 @@ public class EnterProjectDetails extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                String name=id_entername.getText().toString().trim();
-                String mail=id_enterEmail.getText().toString().trim();
-                String sid=id_enterSid.getText().toString().trim();
+                String name = id_entername.getText().toString().trim();
+                String mail = id_enterEmail.getText().toString().trim();
+                String sid = id_enterSid.getText().toString().trim();
 
-                if(TextUtils.isEmpty(name)){
+                if (TextUtils.isEmpty(name)) {
                     Toast.makeText(EnterProjectDetails.this, "Enter Name", Toast.LENGTH_SHORT).show();
-                }
-                else   if(TextUtils.isEmpty(sid)){
+                } else if (TextUtils.isEmpty(sid)) {
                     Toast.makeText(EnterProjectDetails.this, "Enter SID", Toast.LENGTH_SHORT).show();
-                }
-                else   if(TextUtils.isEmpty(mail)){
+                } else if (TextUtils.isEmpty(mail)) {
                     Toast.makeText(EnterProjectDetails.this, "Enter Mail", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                } else {
 
-                    if(addMemberModelArrayList!=null){
-                        saveList(addMemberModelArrayList,name,mail,sid);
-                    }else{
-                        addMemberModelArrayList=new ArrayList<>();
-                        saveList(addMemberModelArrayList,name,mail,sid);
+                    if (addMemberModelArrayList != null) {
+                        saveList(addMemberModelArrayList, name, mail, sid);
+                    } else {
+                        addMemberModelArrayList = new ArrayList<>();
+                        saveList(addMemberModelArrayList, name, mail, sid);
                     }
 
                     id_enterEmail.setText("");
@@ -86,8 +83,8 @@ public class EnterProjectDetails extends AppCompatActivity {
     }
 
     private void saveList(ArrayList<AddMemberModel> addMemberModelArrayList, String name, String mail, String sid) {
-     AddMemberModel addMemberModel=new AddMemberModel(name,mail,sid);
-     addMemberModelArrayList.add(addMemberModel);
+        AddMemberModel addMemberModel = new AddMemberModel(name, mail, sid);
+        addMemberModelArrayList.add(addMemberModel);
 
 
     }

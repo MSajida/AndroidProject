@@ -21,12 +21,16 @@
         android:layout_marginTop="@dimen/_10sdp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
+        app:boxStrokeColor="#757575"
+        android:textColorHint="#757575"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_height="wrap_content"
         >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/id_enterTitle"
+            android:textColorHint="#757575"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Title" />
@@ -36,6 +40,8 @@
         android:layout_marginTop="@dimen/_10sdp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
+        app:boxStrokeColor="#757575"
+        android:textColorHint="#757575"
         app:layout_constraintTop_toBottomOf="@id/title_text_input"
         android:layout_height="wrap_content"
         >
@@ -43,6 +49,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/id_description"
             android:layout_width="match_parent"
+            android:textColorHint="#757575"
+            android:textColor="@color/black"
             android:layout_height="wrap_content"
             android:hint="Enter Description" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -50,6 +58,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:text="Academic Year"
+        android:textColor="#757575"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="@dimen/_10sdp"
         android:id="@+id/text_academicYear"
@@ -73,10 +82,13 @@
             android:layout_marginRight="@dimen/_5sdp"
             app:layout_constraintTop_toBottomOf="@id/text_academicYear"
             android:hint="Select Batch"
+            app:endIconTint="#757575"
+            android:textColorHint="#757575"
             android:orientation="horizontal"
             >
 
             <AutoCompleteTextView
+                android:textColor="@color/black"
                 android:id="@+id/id_selectbatch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -94,10 +106,14 @@
             android:layout_marginTop="@dimen/_8sdp"
             app:layout_constraintTop_toBottomOf="@id/text_academicYear"
             android:hint="Select year"
+            app:endIconTint="#757575"
+
+            android:textColorHint="#757575"
             android:orientation="horizontal"
             >
 
             <AutoCompleteTextView
+                android:textColor="@color/black"
                 android:id="@+id/id_selectyear"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -119,6 +135,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:text="Category"
+            android:textColor="#757575"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginTop="@dimen/_10sdp"
             android:id="@+id/text_category"
@@ -127,36 +144,61 @@
             android:layout_height="match_parent"/>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_weight="1"
+            app:boxStrokeColor="#757575"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_marginRight="@dimen/_30sdp"
             android:layout_height="wrap_content"
+            app:endIconTint="#757575"
             android:layout_marginLeft="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_8sdp"
             app:layout_constraintTop_toBottomOf="@id/text_academicYear"
             android:hint="Select Category"
+            android:textColorHint="#757575"
             android:orientation="horizontal"
             >
 
             <AutoCompleteTextView
+                android:textColor="@color/black"
                 android:id="@+id/id_selectcategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:textColorHint="#757575"
                 android:backgroundTint="@color/white"
                 android:inputType="none"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/github_text_input"
+            android:layout_marginTop="@dimen/_10sdp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            app:boxStrokeColor="#757575"
+            android:textColorHint="#757575"
+            app:layout_constraintTop_toBottomOf="@id/layout_category"
+            android:layout_height="wrap_content"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/id_entergithub"
+                android:textColorHint="#757575"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Github Link" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:text="Add Team Member"
         android:id="@+id/text_addmember"
+        android:textColor="#757575"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="@dimen/_10sdp"
-        app:layout_constraintTop_toBottomOf="@id/layout_category"
+        app:layout_constraintTop_toBottomOf="@id/github_text_input"
         android:layout_height="wrap_content"/>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -164,6 +206,8 @@
             android:layout_marginTop="@dimen/_10sdp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
+            app:boxStrokeColor="#757575"
+            android:textColorHint="#757575"
             app:layout_constraintTop_toBottomOf="@id/text_addmember"
             android:layout_height="wrap_content"
             >
@@ -171,6 +215,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/id_entername"
             android:layout_width="match_parent"
+            android:textColorHint="#757575"
+            android:textColor="@color/black"
             android:layout_height="wrap_content"
             android:hint="Enter Name" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -180,12 +226,16 @@
             android:layout_marginTop="@dimen/_6sdp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
+            android:textColorHint="#757575"
+            app:boxStrokeColor="#757575"
             app:layout_constraintTop_toBottomOf="@id/name_text_input"
             android:layout_height="wrap_content"
             >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/id_enterSid"
+                android:textColorHint="#757575"
+                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter SID" />
@@ -195,12 +245,16 @@
             android:layout_marginTop="@dimen/_6sdp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
+            app:boxStrokeColor="#757575"
+            android:textColorHint="#757575"
             app:layout_constraintTop_toBottomOf="@id/sid_text_input"
             android:layout_height="wrap_content"
             >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/id_enterEmail"
+                android:textColorHint="#757575"
+                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Mail" />
