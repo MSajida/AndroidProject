@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public class SlideshowFragment extends Fragment {
 
     private FragmentSlideshowBinding binding;
-    ArrayList<ProjectsListModel> list = new ArrayList<>();
+    ArrayList<ProjectsListModel> list;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,15 +44,15 @@ public class SlideshowFragment extends Fragment {
 
         binding = FragmentSlideshowBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        list=new ArrayList<>();
+        list = new ArrayList<>();
 
-        binding.idEnvironment.setText("2");
-        binding.idMedical.setText("2");
-        binding.idFood.setText("3");
-        binding.idTravel.setText("2");
-        binding.idMiscellaneous.setText("4");
+        getData(list);
 
-
+        binding.idEnvironment.setText("0");
+        binding.idMedical.setText("0");
+        binding.idFood.setText("0");
+        binding.idTravel.setText("0");
+        binding.idMiscellaneous.setText("0");
 
         binding.piechart.addPieSlice(
                 new PieModel(
@@ -67,7 +67,7 @@ public class SlideshowFragment extends Fragment {
         binding.piechart.addPieSlice(
                 new PieModel(
                         "Environment",
-                        Integer.parseInt( binding.idEnvironment.getText().toString()),
+                        Integer.parseInt(binding.idEnvironment.getText().toString()),
                         Color.parseColor("#EF5350")));
         binding.piechart.addPieSlice(
                 new PieModel(
@@ -82,6 +82,90 @@ public class SlideshowFragment extends Fragment {
         binding.piechart.startAnimation();
 
         return root;
+    }
+
+    private void getData(ArrayList<ProjectsListModel> list) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRefstudent = database.getReference("CountOfProjects");
+        myRefstudent.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                list.clear();
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                    ProjectsListModel projectsListModel = postSnapshot.getValue(ProjectsListModel.class);
+                    list.add(projectsListModel);
+                }
+                if (list.size() > 0) {
+                    int envi=Integer.parseInt(list.get(0).getEnvironment());
+                    int medi=Integer.parseInt(list.get(0).getMedical());
+                    int food=Integer.parseInt(list.get(0).getFood());
+                    int trav=Integer.parseInt(list.get(0).getTravel());
+                    int misc=Integer.parseInt(list.get(0).getMiscellaneous());
+
+                    int count=envi+medi+food+trav+misc;
+                    String envPer="0";
+                    String envMed="0";
+                    String envFood="0";
+                    String envTrav="0";
+                    String envMisc="0";
+                    if(envi>0){
+                        envPer=String.valueOf(envi*100/count)+"%";
+                    }
+                    if(medi>0){
+                        envMed=String.valueOf(medi*100/count)+"%";
+                    }
+
+                    if(food>0){
+                        envFood=String.valueOf(food*100/count)+"%";
+                    }
+
+                    if(trav>0){
+                        envTrav=String.valueOf(trav*100/count)+"%";
+                    }
+
+                    if(misc>0){
+                        envMisc=String.valueOf(misc*100/count)+"%";
+                    }
+
+
+
+
+                    binding.idEnvironment.setText(envPer);
+                    binding.idMedical.setText(envMed);
+                    binding.idFood.setText(envFood);
+                    binding.idTravel.setText(envTrav);
+                    binding.idMiscellaneous.setText(envMisc);
+
+                    binding.piechart.addPieSlice(
+                            new PieModel(
+                                    "Food",food,
+                                    Color.parseColor("#FFA726")));
+                    binding.piechart.addPieSlice(
+                            new PieModel(
+                                    "Travel",trav,
+                                    Color.parseColor("#66BB6A")));
+                    binding.piechart.addPieSlice(
+                            new PieModel(
+                                    "Environment",envi,
+                                    Color.parseColor("#EF5350")));
+                    binding.piechart.addPieSlice(
+                            new PieModel(
+                                    "Medical",medi,
+                                    Color.parseColor("#29B6F6")));
+                    binding.piechart.addPieSlice(
+                            new PieModel(
+                                    "Miscellaneius",misc,
+                                    Color.parseColor("#F6E43C")));
+                    binding.piechart.startAnimation();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     @Override
