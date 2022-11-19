@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:padding="@dimen/_20sdp"
+    android:background="@color/white"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".ui.Profile">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:padding="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        app:cardElevation="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/teammember"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/top_profile"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="@dimen/_80sdp"
+                        android:text="Name :"
+                        android:textSize="@dimen/_18sdp"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:text="Jessica "
+                        android:id="@+id/profileName"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_18sdp"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:id="@+id/middle_profile"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="@dimen/_80sdp"
+                        android:text="SID :"
+                        android:textSize="@dimen/_18sdp"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:text="S123434 "
+                        android:id="@+id/profileSid"
+                        android:textStyle="bold"
+
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_18sdp"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/last_profile"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/middle_profile"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="@dimen/_80sdp"
+                        android:text="Email :"
+                        android:textSize="@dimen/_18sdp"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:textStyle="bold"
+
+                        android:text="Jessica "
+                        android:id="@+id/profileemail"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_18sdp"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Team Member"
+        android:id="@+id/teammember"
+        android:gravity="center"
+        android:textSize="@dimen/_20sdp"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
