@@ -43,7 +43,6 @@ public class Details extends AppCompatActivity {
         ArrayList<AddmemberModel> list=new ArrayList<>();
         for (AddmemberModel postSnapshot : addProjectmodel.getMemberList()) {
             list.add(postSnapshot);
-
         }
 
         teamMemberadapter = new TeamMemberadapter( this,list);
