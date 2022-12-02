@@ -29,11 +29,17 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
     private ArrayList<AddProjectmodel> listdata;
     FoodRelatedProject context;
     int picture;
+    ArrayList<String> testss;
+    String searcheddatassss;
+    String isDatasss;
 
-    public ProjectAdapter(FoodRelatedProject studentEnrolledCoursesActivity, ArrayList<AddProjectmodel> course, int image) {
+    public ProjectAdapter(FoodRelatedProject studentEnrolledCoursesActivity, ArrayList<AddProjectmodel> course, int image, String isData, String searcheddata, ArrayList<String> test) {
         this.listdata=course;
         this.context=studentEnrolledCoursesActivity;
         this.picture=image;
+        this.testss=test;
+        this.searcheddatassss=searcheddata;
+        this.isDatasss=isData;
     }
 
 
@@ -68,7 +74,13 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
             public void onClick(View view) {
                 // edit project
                 Intent intent=new Intent(context, Login.class);
+                intent.putExtra("DELETE", "FALSE");
+                intent.putExtra("FRAGMENT", "FALSE");
                 intent.putExtra("PROJECTDETAILS", addProjectmodel);
+                intent.putStringArrayListExtra("SEARCHEDARRAY", testss);
+                intent.putExtra("SEARCHEDDATA", searcheddatassss);
+                intent.putExtra("BOOLEAN", isDatasss);
+
                 intent.putExtra("EDIT", "TRUE");
                 context.startActivity(intent);
             }
@@ -78,11 +90,26 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
             public void onClick(View view) {
                   // delete project
 
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                Intent intent=new Intent(context, Login.class);
+                intent.putExtra("PROJECTDETAILS", addProjectmodel);
+                intent.putExtra("DELETE", "TRUE");
+                intent.putExtra("FRAGMENT", "FALSE");
+                intent.putExtra("EDIT", "FALSE");
+                intent.putExtra("PROJECTDETAILS", addProjectmodel);
+                intent.putExtra("CATEGORY", addProjectmodel.getCategory());
+                intent.putExtra("KEY", addProjectmodel.getKey());
+                intent.putExtra("POSITION", position);
+                intent.putStringArrayListExtra("SEARCHEDARRAY", testss);
+                intent.putExtra("SEARCHEDDATA", searcheddatassss);
+                intent.putExtra("BOOLEAN", isDatasss);
+
+                context.startActivity(intent);
+
+      /*          FirebaseDatabase database = FirebaseDatabase.getInstance();
                 String key = database.getReference().push().getKey();
                 DatabaseReference myRefstudent = database.getReference("Projects").child(addProjectmodel.getCategory());
                 myRefstudent.child(addProjectmodel.getKey()).removeValue();
-                removeCount(addProjectmodel.getCategory().toString().toLowerCase(),position);
+                removeCount(addProjectmodel.getCategory().toString().toLowerCase(),position);*/
             }
         });
 
@@ -93,8 +120,14 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
         String food="Food";
         String travel="Travel";
         String medical="Medical";
-        String environment="Environment";
+        String environment="Evironment";
         String miscellaneous="Miscellaneous";
+        String transportTourism="TransportTourism";
+        String housing="HousingAccomodation";
+        String chatmedia="ChatMedia";
+        String marketPlaceEcommerce="MarketPlaceEcommerce";
+        String eventManagementEventTracking="EventManagementEventTracking";
+        String educationTechnology="EducationTechnology";
 
         if (category.toLowerCase().equalsIgnoreCase(food.toLowerCase())){
             image=R.drawable.food;
@@ -106,6 +139,21 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
             image=R.drawable.environment;
         }else if(category.toLowerCase().equalsIgnoreCase(miscellaneous.toLowerCase())){
             image=R.drawable.miscellaneous;
+        }else if(category.toLowerCase().equalsIgnoreCase(housing.toLowerCase())){
+            image=R.drawable.housing;
+        }else if(category.toLowerCase().equalsIgnoreCase(transportTourism.toLowerCase())){
+            image=R.drawable.tourisim;
+        }
+        else if(category.toLowerCase().equalsIgnoreCase(educationTechnology.toLowerCase())){
+            image=R.drawable.educationtechnology;
+        }
+        else if(category.toLowerCase().equalsIgnoreCase(eventManagementEventTracking.toLowerCase())){
+            image=R.drawable.eventmanagemtn;
+        }
+        else if(category.toLowerCase().equalsIgnoreCase(marketPlaceEcommerce.toLowerCase())){
+            image=R.drawable.marketplace;
+        }        else if(category.toLowerCase().equalsIgnoreCase(chatmedia.toLowerCase())){
+            image=R.drawable.chatmedia;
         }
         return image;
     }

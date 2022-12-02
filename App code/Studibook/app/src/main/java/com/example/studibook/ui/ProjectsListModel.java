@@ -1,18 +1,25 @@
 package com.example.studibook.ui;
 
 public class ProjectsListModel {
- String Food;
- String Travel;
- String Environment;
- String Medical;
- String Miscellaneous;
 
- public ProjectsListModel(String food, String travel, String environment, String medical, String miscellaneous) {
-  Food = food;
-  Travel = travel;
-  Environment = environment;
-  Medical = medical;
-  Miscellaneous = miscellaneous;
+ String Food;
+  String Travel;
+  String TransportTourism;
+  String Evironment;
+  String ChatMedia;
+  String MarketPlaceEcommerce;
+  String EventManagementEventTracking;
+  String Medical;
+  String Miscellaneous;
+  String EducationTechnology;
+  String Housing;
+
+ public String getHousing() {
+  return Housing;
+ }
+
+ public void setHousing(String housing) {
+  Housing = housing;
  }
 
  public ProjectsListModel() {
@@ -34,12 +41,44 @@ public class ProjectsListModel {
   Travel = travel;
  }
 
- public String getEnvironment() {
-  return Environment;
+ public String getTransportTourism() {
+  return TransportTourism;
  }
 
- public void setEnvironment(String environment) {
-  Environment = environment;
+ public void setTransportTourism(String transportTourism) {
+  TransportTourism = transportTourism;
+ }
+
+ public String getEvironment() {
+  return Evironment;
+ }
+
+ public void setEvironment(String evironment) {
+  Evironment = evironment;
+ }
+
+ public String getChatMedia() {
+  return ChatMedia;
+ }
+
+ public void setChatMedia(String chatMedia) {
+  ChatMedia = chatMedia;
+ }
+
+ public String getMarketPlaceEcommerce() {
+  return MarketPlaceEcommerce;
+ }
+
+ public void setMarketPlaceEcommerce(String marketPlaceEcommerce) {
+  MarketPlaceEcommerce = marketPlaceEcommerce;
+ }
+
+ public String getEventManagementEventTracking() {
+  return EventManagementEventTracking;
+ }
+
+ public void setEventManagementEventTracking(String eventManagementEventTracking) {
+  EventManagementEventTracking = eventManagementEventTracking;
  }
 
  public String getMedical() {
@@ -56,5 +95,29 @@ public class ProjectsListModel {
 
  public void setMiscellaneous(String miscellaneous) {
   Miscellaneous = miscellaneous;
+ }
+
+ public String getEducationTechnology() {
+  return EducationTechnology;
+ }
+
+ public void setEducationTechnology(String educationTechnology) {
+  EducationTechnology = educationTechnology;
+ }
+
+ public ProjectsListModel(String food, String travel, String transportTourism, String evironment, String chatMedia,
+                          String marketPlaceEcommerce, String eventManagementEventTracking, String medical,
+                          String miscellaneous, String educationTechnology, String housings) {
+  Food = food;
+  Travel = travel;
+  Housing=housings;
+  TransportTourism = transportTourism;
+  Evironment = evironment;
+  ChatMedia = chatMedia;
+  MarketPlaceEcommerce = marketPlaceEcommerce;
+  EventManagementEventTracking = eventManagementEventTracking;
+  Medical = medical;
+  Miscellaneous = miscellaneous;
+  EducationTechnology = educationTechnology;
  }
 }
