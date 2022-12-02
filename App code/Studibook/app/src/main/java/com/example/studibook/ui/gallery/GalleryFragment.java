@@ -23,8 +23,10 @@ import androidx.navigation.Navigation;
 import com.example.studibook.AddProjectmodel;
 import com.example.studibook.AddmemberModel;
 import com.example.studibook.CommonUtils;
+import com.example.studibook.DashBoard;
 import com.example.studibook.R;
 import com.example.studibook.ui.AddMemberModel;
+import com.example.studibook.ui.EditProjectActivtiy;
 import com.example.studibook.ui.EnterProjectDetails;
 import com.example.studibook.ui.Login;
 import com.example.studibook.ui.ProjectsListModel;
@@ -42,11 +44,15 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class GalleryFragment extends Fragment {
+    String category ="";
 
     String[] batchList = new String[]{"Fall", "Spring", "Summer"};
     //  String[] yearList = new String[]{"2022", "2021", "2020"};
     ArrayList<String> yearList;
-    String[] categoryList = new String[]{"Food", "Travel", "Environment", "Medical", "Miscellaneous"};
+   // String[] categoryList = new String[]{"Food", "Travel", "TransportTourism", "ChatMedia", "Evironment", "MarketPlaceEcommerce", "EventManagementEventTracking", "Medical", "Miscellaneous", "EducationTechnology"};
+    String[] categoryList = new String[]{"Food","EducationTechnology","TransportTourism","Medical", "ChatMedia", "MarketPlaceEcommerce", "EventManagementEventTracking","HousingAccomodation","Evironment",  "Miscellaneous"};
+    String[] showlist = new String[]{"Food","Education & Technology","Transport & Tourism","Medical", "Chat & Media", "Market Place & E-commerce", "Event Management & Event Tracking","Housing & Accomodation","ENvironment",  "Miscellaneous"};
+
 
     AutoCompleteTextView batchView, yearView, categoryView;
     TextInputEditText id_enterTitle, id_description, id_entername, id_enterSid, id_enterEmail, id_entergithub;
@@ -57,8 +63,10 @@ public class GalleryFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = new Intent(getActivity(), Login.class);
-        intent.putExtra("FRAGMENT", "FRAGMENT");
-        startActivity(intent);
+        intent.putExtra("FRAGMENT", "TRUE");
+        intent.putExtra("DELETE", "FALSE");
+        intent.putExtra("EDIT", "FALSE");
+        startActivityForResult(intent, 2);
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -109,7 +117,7 @@ public class GalleryFragment extends Fragment {
         yearView.setAdapter(yearadapter);
 
         ArrayAdapter<String> categoryadapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_dropdown_item_1line, categoryList);
+                android.R.layout.simple_dropdown_item_1line, showlist);
         categoryView.setAdapter(categoryadapter);
     }
 
@@ -156,23 +164,60 @@ public class GalleryFragment extends Fragment {
                     String name = id_entername.getText().toString().trim();
                     String mail = id_enterEmail.getText().toString().trim();
                     String sid = id_enterSid.getText().toString().trim();
-                    if (addMemberModelArrayList != null) {
-                        saveList(addMemberModelArrayList, name, mail, sid);
+                    if (name.isEmpty()) {
+
+                    } else if (mail.isEmpty()) {
+
+                    } else if (sid.isEmpty()) {
+
                     } else {
-                        addMemberModelArrayList = new ArrayList<>();
-                        saveList(addMemberModelArrayList, name, mail, sid);
+                        if (addMemberModelArrayList != null) {
+                            saveList(addMemberModelArrayList, name, mail, sid);
+                        } else {
+                            addMemberModelArrayList = new ArrayList<>();
+                            saveList(addMemberModelArrayList, name, mail, sid);
+                        }
                     }
+
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
 
                 try {
                     if (CommonUtils.isConnectedToInternet(getActivity())) {
-                        String enterProjectTitle = id_enterTitle.getText().toString();
+                        String enterProjectTitle = id_enterTitle.getText().toString().trim();
                         String enterProjectdescription = id_description.getText().toString();
                         String batch = batchView.getText().toString();
                         String year = yearView.getText().toString();
-                        String category = categoryView.getText().toString();
+                        String ca = categoryView.getText().toString();
+                    /*    "Food","EducationTechnology","TransportTourism","Medical", "ChatMedia",
+                                "MarketPlaceEcommerce", "EventManagementEventTracking","HousingAccomodation",
+                                "Evironment",  "Miscellaneous";*/
+
+                        if(ca.contains("Food")){
+                            category="Food";
+                        } else if(ca.contains("Education")){
+                            category="EducationTechnology";
+                        } else if(ca.contains("Transport")){
+                            category="TransportTourism";
+                        } else if(ca.contains("Medical")){
+                            category="Medical";
+                        } else if(ca.contains("Chat")){
+                            category="ChatMedia";
+                        }else if(ca.contains("Market")){
+                            category="MarketPlaceEcommerce";
+                        }else if(ca.contains("Event")){
+                            category="EventManagementEventTracking";
+                        }else if(ca.contains("Housing")){
+                            category="HousingAccomodation";
+                        }else if(ca.contains("Housing")){
+                            category="HousingAccomodation";
+                        }else if(ca.contains("ironment")){
+                            category="Evironment";
+                        }else if(ca.contains("Miscellaneous")){
+                            category="Miscellaneous";
+                        }
                         String githubLink = id_entergithub.getText().toString();
 
                         if (TextUtils.isEmpty(enterProjectTitle)) {
@@ -214,22 +259,29 @@ public class GalleryFragment extends Fragment {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
 
-                                            FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-                                            DatabaseReference databaseReference= firebaseDatabase.getReference("Keywords").child("Categories");
+                                            FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+                                            DatabaseReference databaseReference = firebaseDatabase.getReference("Title");
+                                            String unquekey = databaseReference.push().getKey();
+                                            String cate = "ProjectTitles";
                                             databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                                                 @Override
                                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                                    if(snapshot.hasChild(category)){
-                                                        for (DataSnapshot snapshot1:snapshot.getChildren()){
-                                                            String keyword=snapshot1.getValue(String.class);
+                                                    if (snapshot.hasChild(cate)) {
+                                                        for (DataSnapshot snapshot1 : snapshot.getChildren()) {
+                                                            String keyword = snapshot1.getValue(String.class);
+/*
                                                             if(snapshot1.getKey().toString().toLowerCase().equalsIgnoreCase(category.toLowerCase(Locale.ROOT))){
-                                                                String appendKeyword=keyword+","+enterProjectTitle;
-                                                                databaseReference.child(category).setValue(appendKeyword);
+                                                                String appendKeyword=keyword+","+enterProjectTitle+",";
+                                                                databaseReference.child(cate).setValue(appendKeyword);
                                                             }
+*/
+                                                            String appendKeyword = keyword + enterProjectTitle + ",";
+                                                            databaseReference.child(cate).setValue(appendKeyword);
+
 
                                                         }
-                                                    }else{
-                                                       databaseReference.child(category).setValue(enterProjectTitle);
+                                                    } else {
+                                                        databaseReference.child(cate).setValue(enterProjectTitle + ",");
                                                     }
                                                 }
 
@@ -240,15 +292,12 @@ public class GalleryFragment extends Fragment {
                                             });
 
 
-
-
                                             Toast.makeText(getActivity(), "Project Details are saved....", Toast.LENGTH_SHORT).show();
 
                                         }
                                     });
                                     saveCount(category);
-                                    NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_dash_board);
-                                    navController.navigate(R.id.nav_mainhome);
+
 
                                     //   navController.findNavController(this).navigate(R.id.action_b_to_a);
 
@@ -276,40 +325,163 @@ public class GalleryFragment extends Fragment {
         myRefstudent.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChildren()){
+                if (snapshot.hasChildren()) {
                     for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                         ProjectsListModel projectsListModel = postSnapshot.getValue(ProjectsListModel.class);
                         String medical = projectsListModel.getMedical();
                         String travel = projectsListModel.getTravel();
                         String food = projectsListModel.getFood();
                         String miscellaneous = projectsListModel.getMiscellaneous();
-                        String environment = projectsListModel.getEnvironment();
+                        String environment = projectsListModel.getEvironment();
+                        String transport = projectsListModel.getTransportTourism();
+                        String media = projectsListModel.getChatMedia();
+                        String market = projectsListModel.getMarketPlaceEcommerce();
+                        String event = projectsListModel.getEventManagementEventTracking();
+                        String education = projectsListModel.getEducationTechnology();
+                        String housing = projectsListModel.getHousing();
 
                         int medicalCount = 0;
                         int travelCount = 0;
                         int foodCount = 0;
                         int miscellaneousCount = 0;
                         int environmentCount = 0;
+                        int transportcount = 0;
+                        int mediacount = 0;
+                        int marketcount = 0;
+                        int eventcount = 0;
+                        int educationcount = 0;
+                        int housingcount = 0;
+
                         if (category.equals("Medical")) {
                             medicalCount = Integer.parseInt(medical);
                             travelCount = Integer.parseInt(travel);
                             miscellaneousCount = Integer.parseInt(miscellaneous);
                             foodCount = Integer.parseInt(food);
+                            transportcount = Integer.parseInt(transport);
                             environmentCount = Integer.parseInt(environment);
+                            mediacount = Integer.parseInt(media);
+                            marketcount = Integer.parseInt(market);
+                            educationcount = Integer.parseInt(education);
+                            eventcount = Integer.parseInt(event);
+                            housingcount = Integer.parseInt(housing);
                             medicalCount = medicalCount + 1;
+                        } else if (category.equals("HousingAccomodation")) {
+                            medicalCount = Integer.parseInt(medical);
+                            travelCount = Integer.parseInt(travel);
+                            miscellaneousCount = Integer.parseInt(miscellaneous);
+                            foodCount = Integer.parseInt(food);
+                            transportcount = Integer.parseInt(transport);
+                            environmentCount = Integer.parseInt(environment);
+                            mediacount = Integer.parseInt(media);
+                            marketcount = Integer.parseInt(market);
+                            educationcount = Integer.parseInt(education);
+                            eventcount = Integer.parseInt(event);
+                            housingcount = Integer.parseInt(housing);
+                            housingcount = housingcount + 1;
+                        }
+                        else if (category.equals("EducationTechnology")) {
+                            medicalCount = Integer.parseInt(medical);
+                            travelCount = Integer.parseInt(travel);
+                            miscellaneousCount = Integer.parseInt(miscellaneous);
+                            foodCount = Integer.parseInt(food);
+                            transportcount = Integer.parseInt(transport);
+                            environmentCount = Integer.parseInt(environment);
+                            mediacount = Integer.parseInt(media);
+                            marketcount = Integer.parseInt(market);
+                            educationcount = Integer.parseInt(education);
+                            eventcount = Integer.parseInt(event);
+                            housingcount = Integer.parseInt(housing);
+
+                            educationcount = educationcount + 1;
+                        }
+                        else if (category.equals("EventManagementEventTracking")) {
+                            medicalCount = Integer.parseInt(medical);
+                            travelCount = Integer.parseInt(travel);
+                            miscellaneousCount = Integer.parseInt(miscellaneous);
+                            foodCount = Integer.parseInt(food);
+                            transportcount = Integer.parseInt(transport);
+                            environmentCount = Integer.parseInt(environment);
+                            mediacount = Integer.parseInt(media);
+                            marketcount = Integer.parseInt(market);
+                            educationcount = Integer.parseInt(education);
+                            eventcount = Integer.parseInt(event);
+                            housingcount = Integer.parseInt(housing);
+
+                            eventcount = eventcount + 1;
+                        } else if (category.equals("MarketPlaceEcommerce")) {
+                            medicalCount = Integer.parseInt(medical);
+                            travelCount = Integer.parseInt(travel);
+                            miscellaneousCount = Integer.parseInt(miscellaneous);
+                            foodCount = Integer.parseInt(food);
+                            transportcount = Integer.parseInt(transport);
+                            environmentCount = Integer.parseInt(environment);
+                            mediacount = Integer.parseInt(media);
+                            marketcount = Integer.parseInt(market);
+                            educationcount = Integer.parseInt(education);
+                            eventcount = Integer.parseInt(event);
+                            housingcount = Integer.parseInt(housing);
+
+                            marketcount = marketcount + 1;
+
+                        } else if (category.equals("ChatMedia")) {
+                            medicalCount = Integer.parseInt(medical);
+                            travelCount = Integer.parseInt(travel);
+                            miscellaneousCount = Integer.parseInt(miscellaneous);
+                            foodCount = Integer.parseInt(food);
+                            transportcount = Integer.parseInt(transport);
+                            environmentCount = Integer.parseInt(environment);
+                            mediacount = Integer.parseInt(media);
+                            marketcount = Integer.parseInt(market);
+                            educationcount = Integer.parseInt(education);
+                            eventcount = Integer.parseInt(event);
+                            housingcount = Integer.parseInt(housing);
+
+                            mediacount = mediacount + 1;
+
+
+                        } else if (category.equals("TransportTourism")) {
+                            medicalCount = Integer.parseInt(medical);
+                            travelCount = Integer.parseInt(travel);
+                            miscellaneousCount = Integer.parseInt(miscellaneous);
+                            foodCount = Integer.parseInt(food);
+                            transportcount = Integer.parseInt(transport);
+                            environmentCount = Integer.parseInt(environment);
+                            mediacount = Integer.parseInt(media);
+                            marketcount = Integer.parseInt(market);
+                            educationcount = Integer.parseInt(education);
+                            eventcount = Integer.parseInt(event);
+                            housingcount = Integer.parseInt(housing);
+
+                            transportcount = transportcount + 1;
+
                         } else if (category.equals("Travel")) {
                             medicalCount = Integer.parseInt(medical);
                             travelCount = Integer.parseInt(travel);
                             miscellaneousCount = Integer.parseInt(miscellaneous);
                             foodCount = Integer.parseInt(food);
+
+                            transportcount = Integer.parseInt(transport);
                             environmentCount = Integer.parseInt(environment);
+                            mediacount = Integer.parseInt(media);
+                            marketcount = Integer.parseInt(market);
+                            educationcount = Integer.parseInt(education);
+                            eventcount = Integer.parseInt(event);
+                            housingcount = Integer.parseInt(housing);
+
                             travelCount = travelCount + 1;
                         } else if (category.equals("Food")) {
                             medicalCount = Integer.parseInt(medical);
                             travelCount = Integer.parseInt(travel);
                             miscellaneousCount = Integer.parseInt(miscellaneous);
                             foodCount = Integer.parseInt(food);
+
+                            transportcount = Integer.parseInt(transport);
                             environmentCount = Integer.parseInt(environment);
+                            mediacount = Integer.parseInt(media);
+                            marketcount = Integer.parseInt(market);
+                            educationcount = Integer.parseInt(education);
+                            eventcount = Integer.parseInt(event);
+                            housingcount = Integer.parseInt(housing);
 
                             foodCount = foodCount + 1;
                         } else if (category.equals("Miscellaneous")) {
@@ -317,73 +489,216 @@ public class GalleryFragment extends Fragment {
                             travelCount = Integer.parseInt(travel);
                             miscellaneousCount = Integer.parseInt(miscellaneous);
                             foodCount = Integer.parseInt(food);
+
+                            transportcount = Integer.parseInt(transport);
                             environmentCount = Integer.parseInt(environment);
+                            mediacount = Integer.parseInt(media);
+                            marketcount = Integer.parseInt(market);
+                            educationcount = Integer.parseInt(education);
+                            eventcount = Integer.parseInt(event);
+                            housingcount = Integer.parseInt(housing);
+
                             miscellaneousCount = miscellaneousCount + 1;
-                        } else if (category.equals("Environment")) {
+                        } else if (category.equals("Evironment")) {
                             medicalCount = Integer.parseInt(medical);
                             travelCount = Integer.parseInt(travel);
                             miscellaneousCount = Integer.parseInt(miscellaneous);
                             foodCount = Integer.parseInt(food);
+
+                            transportcount = Integer.parseInt(transport);
                             environmentCount = Integer.parseInt(environment);
+                            mediacount = Integer.parseInt(media);
+                            marketcount = Integer.parseInt(market);
+                            educationcount = Integer.parseInt(education);
+                            eventcount = Integer.parseInt(event);
+                            housingcount = Integer.parseInt(housing);
 
                             environmentCount = environmentCount + 1;
                         }
                         ProjectsListModel studentPieModels =
                                 new ProjectsListModel(Integer.toString(foodCount),
                                         Integer.toString(travelCount),
+                                        Integer.toString(transportcount),
                                         Integer.toString(environmentCount),
+                                        Integer.toString(mediacount),
+                                        Integer.toString(marketcount),
+                                        Integer.toString(eventcount),
                                         Integer.toString(medicalCount),
-                                        Integer.toString(miscellaneousCount)
+                                        Integer.toString(miscellaneousCount),
+                                        Integer.toString(educationcount),
+                                        Integer.toString(housingcount)
                                 );
                         myRefstudent.child("Projects").setValue(studentPieModels);
 
                     }
-                }else {
+                } else {
                     String medicalCount = "0";
                     String travelCount = "0";
                     String foodCount = "0";
                     String miscellaneousCount = "0";
                     String environmentCount = "0";
+                    String transportcount = "0";
+                    String eventcount = "0";
+                    String mediacount = "0";
+                    String marketcount = "0";
+                    String educationcount = "0";
+                    String housingcount = "0";
+
                     if (category.equals("Medical")) {
                         medicalCount = "1";
                         travelCount = "0";
                         miscellaneousCount = "0";
                         foodCount = "0";
                         environmentCount = "0";
+                        transportcount="0";
+                        eventcount="0";
+                        mediacount="0";
+                        marketcount="0";
+                        educationcount="0";
+                        housingcount="0";
+                    }
+                    else if (category.equals("HousingAccomodation")) {
+                        medicalCount = "0";
+                        travelCount = "0";
+                        miscellaneousCount = "0";
+                        foodCount = "0";
+                        environmentCount = "0";
+                        transportcount="0";
+                        eventcount="0";
+                        mediacount="0";
+                        marketcount="0";
+                        educationcount="0";
+                        housingcount="1";
+                    }
+
+                    else if (category.equals("EventManagementEventTracking")) {
+                        medicalCount = "0";
+                        travelCount = "0";
+                        miscellaneousCount = "0";
+                        foodCount = "0";
+                        environmentCount = "0";
+                        transportcount="0";
+                        eventcount="1";
+                        mediacount="0";
+                        marketcount="0";
+                        educationcount="0";
+                        housingcount="0";
+
+
+                    } else if (category.equals("EducationTechnology")) {
+                        medicalCount = "0";
+                        travelCount = "0";
+                        miscellaneousCount = "0";
+                        foodCount = "0";
+                        environmentCount = "0";
+                        transportcount="0";
+                        eventcount="0";
+                        mediacount="0";
+                        marketcount="0";
+                        educationcount="1";
+                        housingcount="0";
+
+                    } else if (category.equals("MarketPlaceEcommerce")) {
+                        medicalCount = "0";
+                        travelCount = "0";
+                        miscellaneousCount = "0";
+                        foodCount = "0";
+                        environmentCount = "0";
+                        transportcount="0";
+                        eventcount="0";
+                        mediacount="0";
+                        marketcount="1";
+                        educationcount="0";
+                        housingcount="0";
+
                     } else if (category.equals("Travel")) {
                         medicalCount = "0";
                         travelCount = "1";
                         miscellaneousCount = "0";
                         foodCount = "0";
                         environmentCount = "0";
+                        transportcount="0";
+                        eventcount="0";
+                        mediacount="0";
+                        marketcount="0";
+                        educationcount="0";
+                        housingcount="0";
+
+                    } else if (category.equals("ChatMedia")) {
+                        medicalCount = "0";
+                        travelCount = "0";
+                        miscellaneousCount = "0";
+                        foodCount = "0";
+                        environmentCount = "0";
+                        transportcount="0";
+                        eventcount="0";
+                        mediacount="1";
+                        marketcount="0";
+                        educationcount="0";
+                        housingcount="0";
+
+                    } else if (category.equals("TransportTourism")) {
+                        medicalCount = "0";
+                        travelCount = "0";
+                        miscellaneousCount = "0";
+                        foodCount = "0";
+                        environmentCount = "0";
+                        transportcount="1";
+                        eventcount="0";
+                        mediacount="0";
+                        marketcount="0";
+                        educationcount="0";
+                        housingcount="0";
+
                     } else if (category.equals("Food")) {
                         medicalCount = "0";
-                        travelCount ="0";
-                        miscellaneousCount ="0";
-                        foodCount ="1";
+                        travelCount = "0";
+                        miscellaneousCount = "0";
+                        foodCount = "1";
                         environmentCount = "0";
+                        transportcount="0";
+                        eventcount="0";
+                        mediacount="0";
+                        marketcount="0";
+                        educationcount="0";
+                        housingcount="0";
+
                     } else if (category.equals("Miscellaneous")) {
                         medicalCount = "0";
-                        travelCount ="0";
-                        miscellaneousCount ="1";
+                        travelCount = "0";
+                        miscellaneousCount = "1";
                         foodCount = "0";
-                        environmentCount ="0";
-                    } else if (category.equals("Environment")) {
+                        environmentCount = "0";
+                        transportcount="0";
+                        eventcount="0";
+                        mediacount="0";
+                        marketcount="0";
+                        educationcount="0";
+                        housingcount="0";
+
+                    } else if (category.equals("Evironment")) {
                         medicalCount = "0";
-                        travelCount ="0";
+                        travelCount = "0";
                         miscellaneousCount = "0";
                         foodCount = "0";
                         environmentCount = "1";
+                        transportcount="0";
+                        eventcount="0";
+                        mediacount="0";
+                        marketcount="0";
+                        educationcount="0";
+                        housingcount="0";
+
                     }
                     ProjectsListModel studentPieModels =
-                            new ProjectsListModel(foodCount,travelCount,environmentCount,
-                                    medicalCount,
-                                    miscellaneousCount
-                            );
+                            new ProjectsListModel(foodCount, travelCount,transportcount, environmentCount,mediacount,marketcount
+                                    ,eventcount,medicalCount,
+                                    miscellaneousCount,educationcount,housingcount);
                     myRefstudent.child("Projects").setValue(studentPieModels);
 
                 }
 
+                gotoDashBoard();
 
             }
 
@@ -392,6 +707,12 @@ public class GalleryFragment extends Fragment {
 
             }
         });
+    }
+
+    private void gotoDashBoard() {
+        Intent intent = new Intent(getActivity(), DashBoard.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
     private void saveList(ArrayList<AddMemberModel> addMemberModelArrayList, String name, String mail, String sid) {

@@ -12,7 +12,9 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -26,6 +28,7 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityDashBoardBinding binding;
+    NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +41,10 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_mainhome,
-                R.id.nav_home,  R.id.nav_slideshow,R.id.nav_helpsupport)
+                R.id.nav_home, R.id.nav_slideshow, R.id.nav_helpsupport)
                 .setOpenableLayout(drawer)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_dash_board);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_dash_board);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
@@ -58,9 +61,26 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.nav_gallery){
-            Toast.makeText(DashBoard.this, "Toast clicked", Toast.LENGTH_SHORT).show();
+        if (id == R.id.nav_gallery) {
+           // Toast.makeText(DashBoard.this, "Toast clicked", Toast.LENGTH_SHORT).show();
         }
         return false;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        for (Fragment fragment : getSupportFragmentManager().getFragments()) {
+            fragment.onActivityResult(requestCode, resultCode, data);
+
+            if (resultCode == 2) {
+                navController.popBackStack(R.id.nav_gallery, true);
+                navController.navigate(R.id.nav_mainhome);
+            } else if (resultCode == 3) {
+                navController.popBackStack(R.id.nav_gallery, true);
+                navController.navigate(R.id.nav_mainhome);
+            }
+
+        }
     }
 }
