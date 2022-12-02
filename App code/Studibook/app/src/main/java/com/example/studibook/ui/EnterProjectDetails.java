@@ -85,8 +85,6 @@ public class EnterProjectDetails extends AppCompatActivity {
     private void saveList(ArrayList<AddMemberModel> addMemberModelArrayList, String name, String mail, String sid) {
         AddMemberModel addMemberModel = new AddMemberModel(name, mail, sid);
         addMemberModelArrayList.add(addMemberModel);
-
-
     }
 
     private void setSpinnerAdapterValues() {
