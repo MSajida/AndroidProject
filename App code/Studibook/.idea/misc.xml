@@ -1,5 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/2021/projects/Studibook/Studibook/app/src/main/res/layout/fragment_slideshow.xml" value="0.19739583333333333" />
+        <entry key="..\:/2021/projects/Studibooks/Studibook/app/src/main/res/layout/activity_edit_project_activtiy.xml" value="0.19739583333333333" />
+        <entry key="..\:/2021/projects/Studibooks/Studibook/app/src/main/res/layout/activity_enter_project_details.xml" value="0.19739583333333333" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibook/app/src/main/res/layout/activity_dash_board.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibook/app/src/main/res/layout/activity_details.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibook/app/src/main/res/layout/activity_edit_project_activtiy.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibook/app/src/main/res/layout/activity_enter_project_details.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibook/app/src/main/res/layout/activity_food_related_project.xml" value="0.20833333333333334" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibook/app/src/main/res/layout/activity_login.xml" value="0.11302083333333333" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibook/app/src/main/res/layout/activity_profile.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibook/app/src/main/res/layout/app_bar_dash_board.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibook/app/src/main/res/layout/fragment_gallery.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibook/app/src/main/res/layout/fragment_help_support.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibook/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibook/app/src/main/res/layout/fragment_main_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibook/app/src/main/res/layout/fragment_slideshow.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibook/app/src/main/res/layout/list_item.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibook/app/src/main/res/layout/teammember_list_item.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibooks/app/src/main/res/layout/activity_edit_project_activtiy.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibooks/app/src/main/res/layout/activity_enter_project_details.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibooks/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibooks/app/src/main/res/layout/fragment_main_home.xml" value="0.12360688956433637" />
+        <entry key="..\:/Projectss/freelancing/Studibook/Studibooks/app/src/main/res/layout/fragment_slideshow.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/android/Studibooks/app/src/main/res/layout/activity_dash_board.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/android/Studibooks/app/src/main/res/layout/activity_enter_project_details.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/android/Studibooks/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/android/Studibooks/app/src/main/res/layout/fragment_main_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/Projectss/freelancing/android/Studibooks/app/src/main/res/layout/fragment_slideshow.xml" value="0.264" />
+        <entry key="..\:/Projectss/freelancing/android/Studibooks/app/src/main/res/layout/nav_header_dash_board.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/S546648/AndroidStudioProjects/Studibooks/app/src/main/res/layout/activity_dash_board.xml" value="0.1" />
+        <entry key="..\:/Users/S546648/AndroidStudioProjects/Studibooks/app/src/main/res/layout/activity_edit_project_activtiy.xml" value="0.12228260869565218" />
+        <entry key="..\:/Users/S546648/AndroidStudioProjects/Studibooks/app/src/main/res/layout/activity_enter_project_details.xml" value="0.10914855072463768" />
+        <entry key="..\:/Users/S546648/AndroidStudioProjects/Studibooks/app/src/main/res/layout/activity_login.xml" value="0.10914855072463768" />
+        <entry key="..\:/Users/S546648/AndroidStudioProjects/Studibooks/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/S546648/AndroidStudioProjects/Studibooks/app/src/main/res/layout/activity_profile.xml" value="0.10914855072463768" />
+        <entry key="..\:/Users/S546648/AndroidStudioProjects/Studibooks/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/S546648/AndroidStudioProjects/Studibooks/app/src/main/res/layout/fragment_main_home.xml" value="0.12228260869565218" />
+        <entry key="..\:/Users/S546648/AndroidStudioProjects/Studibooks/app/src/main/res/layout/fragment_slideshow.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/S546648/AndroidStudioProjects/Studibooks/app/src/main/res/layout/nav_header_dash_board.xml" value="0.1" />
+        <entry key="..\:/Users/S546648/AndroidStudioProjects/Studibooks/app/src/main/res/layout/teammember_list_item.xml" value="0.1796875" />
+        <entry key="..\:/Users/S546648/AndroidStudioProjects/Studibooks/app/src/main/res/menu/activity_main_drawer.xml" value="0.1796875" />
+        <entry key="..\:/android/Studibook/Studibook/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.155" />
+        <entry key="..\:/android/Studibook/Studibook/app/src/main/res/layout/activity_dash_board.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibook/Studibook/app/src/main/res/layout/activity_details.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibook/Studibook/app/src/main/res/layout/activity_enter_project_details.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibook/Studibook/app/src/main/res/layout/activity_food_related_project.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibook/Studibook/app/src/main/res/layout/activity_profile.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibook/Studibook/app/src/main/res/layout/fragment_gallery.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibook/Studibook/app/src/main/res/layout/fragment_help_support.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibook/Studibook/app/src/main/res/layout/fragment_home.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibook/Studibook/app/src/main/res/layout/fragment_main_home.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibook/Studibook/app/src/main/res/layout/fragment_slideshow.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibook/Studibook/app/src/main/res/layout/list_item.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibook/Studibook/app/src/main/res/layout/nav_header_dash_board.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibook/Studibook/app/src/main/res/menu/activity_main_drawer.xml" value="0.5" />
+        <entry key="..\:/android/Studibooks/app/src/main/res/layout/activity_edit_project_activtiy.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibooks/app/src/main/res/layout/activity_enter_project_details.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibooks/app/src/main/res/layout/activity_food_related_project.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibooks/app/src/main/res/layout/fragment_main_home.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibooks/app/src/main/res/layout/fragment_slideshow.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/Studibooks/app/src/main/res/menu/activity_main_drawer.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/dronesample/Studibook/Studibook/app/src/main/res/layout/activity_details.xml" value="0.33" />
+        <entry key="..\:/android/dronesample/Studibook/Studibook/app/src/main/res/layout/activity_profile.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/dronesample/Studibook/Studibook/app/src/main/res/layout/fragment_help_support.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/dronesample/Studibook/Studibook/app/src/main/res/layout/fragment_main_home.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/dronesample/Studibook/Studibook/app/src/main/res/layout/fragment_slideshow.xml" value="0.22" />
+        <entry key="..\:/android/dronesample/Studibook/Studibook/app/src/main/res/layout/list_item.xml" value="0.19739583333333333" />
+        <entry key="..\:/android/dronesample/Studibook/Studibook/app/src/main/res/layout/teammember_list_item.xml" value="0.19739583333333333" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
