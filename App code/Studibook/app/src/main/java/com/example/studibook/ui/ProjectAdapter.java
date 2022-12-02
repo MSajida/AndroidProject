@@ -88,7 +88,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
         holder.delete_project.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                  // delete project
+                // delete project
 
                 Intent intent=new Intent(context, Login.class);
                 intent.putExtra("PROJECTDETAILS", addProjectmodel);
