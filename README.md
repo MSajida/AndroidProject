@@ -12,7 +12,7 @@ Thaarani Yerramsetty </br>
 
 <p>
  Thaarani Yerramsetty S547062 </br>
- 1. Login page.</br>
+ 1. Instructor Login page.</br>
  2. Help and support page also and</br>
  3. Enter project details page also.</p>
  
@@ -22,7 +22,7 @@ Thaarani Yerramsetty </br>
  2. About Page. </br>
 
 <p>
- Sajida S546648 </br>
+ Sajida Mohammad S546648 </br>
  1. Search bar and fetched the projects when clicked on search bar. </br>
  2. Navigation bar which redirects to the respective pages. </br>
 </p>
@@ -60,11 +60,11 @@ In this Instructor and GA will have login access for edit, delete, insert, updat
 
 ##### Search: <br>
 - A Student can search the project with the related keyword of the particular domain or with the title of the project. 
-- With the related keyword it will display the number of projects which comes under it. </br>
+- With the related keyword it will display the number of projects available under it. </br>
 
 ##### Categories: <br>
 - In this we have created different general categories where most of the project falls under any of the categories mentioned. 
-- If a project doesnot relate to ant domain it will be placed under miscelleanous domain.
+- If a project does not relate to any domain it will be placed under miscelleanous domain.
 - As the project list will be displayed with all the related projects from that particular domain. </br>
 
 ##### Information about a project: <br>
