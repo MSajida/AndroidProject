@@ -18,19 +18,19 @@ Thaarani Yerramsetty </br>
  
  <p>
  Sreeja Kumbhum S547055 </br>
- 1. Pie chart </br>
- 2. About Page </br>
+ 1. Pie chart. </br>
+ 2. About Page. </br>
 
 <p>
  Sajida S546648 </br>
- 1. Search bar and fetched the projects when clicked on search bar</br>
- 2. Navigation bar which redirects to the respective pages </br>
+ 1. Search bar and fetched the projects when clicked on search bar. </br>
+ 2. Navigation bar which redirects to the respective pages. </br>
 </p>
 
  <p>
  Jessica Merugu S547054 </br>
- 1. Project details</br>
- 2. Added details of project, its description and team member details</br>
+ 1. Project details. </br>
+ 2. Added details of project, its description and team member details. </br>
 <p><br>
  
 ### Application information
@@ -54,11 +54,37 @@ This screen consists of a Menu which has 5 sub categories
 ##### Help & Support:
  This screen will display details regarding the graduate assistant for the current semester. From the same screen, students can also contact the GA via phone or email.<br>
  
-##### Test Credentials for Login: 
+#### Test Credentials for Login: 
 UserName: Instructor <br>
 Password: nwmissouri
 
-##### Supported Devices: 
+#### Supported Devices: 
  - API level 22 to API level 31 <br>
  - Google play store supported Emulators is required to run the application
+
+#### Advantages:
+- User-Friendly.</br>
+- Handy to the students for both code and for references. </br>
+- All android projects references together on the single application.</br>
+- Provides percentages of each domain which helps students to chose the project on the domains which are not worked on it.</br>
+- Persistent Data.</br>
+- We used Firebase Database to store and retrieve the data.</br>
+- Pie chart provides a better comparison of data for the students. And effective mode of communication.</br>
+
+#### API/Libraries:
+###### Google Firebase:</br>
+ com.google.firebase:firebase-database:20.0 (This can be used when Android API is 9 or above)</br>
+###### Pie chart functionality:</br>
+ com.github.blackfizz:eazegraph:1.2.5 </br>
+ com.nineoldandroids:library:2.4.0</br>
+ 
+#### Technical Stack</br>
+###### Android : xml, java</br>
+
+#### Problems Faced:
+- Finding the projects with the keywords as both categories shared same word.</br>
+- Issues with the piechart.</br>
+- Issues in displaying the percentages for the number of projects stored in the data base.</br>
+- It's also possible that this application will cause problems with loading.</br>
+- Issues in the search functionality.</br></p>
 
